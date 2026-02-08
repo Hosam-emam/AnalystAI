@@ -12,5 +12,5 @@ wheels/
 # Enviroment Variables
 .env
 
-# Jupytre Notebooks
-*.ipynb
+# Jupyter Notebook Experiments
+experiments/
