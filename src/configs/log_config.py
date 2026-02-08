@@ -17,10 +17,10 @@ def get_logger(name: str, level: int) -> logging.Logger:
 
     logger = logging.getLogger(name)
 
+    logger.setLevel(level)
+
     if logger.handlers:
         return logger
-    
-
 
     formatter = logging.Formatter(
         fmt=LOG_FORMAT,
@@ -34,14 +34,19 @@ def get_logger(name: str, level: int) -> logging.Logger:
 
     # File Handler
     from src import settings
+    import os
 
-    file_name = settings.LOG_DIR / f"{name}.log"
+    os.makedirs(name=settings.LOG_DIR, exist_ok=True)
+
+    file_name = os.path.join(settings.LOG_DIR, f"{name}.log")
+
     file_handler = RotatingFileHandler(
         filename=file_name,
         maxBytes=settings.LOG_MAX_BYTES,
         backupCount=settings.LOG_BACKUP_COUNT,
         encoding="utf-8"
     )
+
     file_handler.setFormatter(fmt=formatter)
     logger.addHandler(file_handler)
 

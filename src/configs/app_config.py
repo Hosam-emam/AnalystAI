@@ -6,7 +6,7 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     # App Configuration
-    APP_NAME: str = "Data Analysis Agent"
+    APP_NAME: str = "AnalystAI"
     APP_VERSION: str = "0.0.1"
     
     # OpenRouter Configuration
