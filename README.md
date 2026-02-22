@@ -1,4 +1,4 @@
-# Data Analysis Agent
+# Agent Dan AI
 
 [![Python Version](https://img.shields.io/badge/Python-3.11+-blue)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.128-green)](https://fastapi.tiangolo.com/)
